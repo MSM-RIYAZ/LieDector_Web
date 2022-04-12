@@ -14,6 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Color colBodyGrey =Color(0xFF7F7C82);
   Color colWhite =Color(0xFFF3F1F5);
   Color colGreen =Color(0xFF007600);
+  String bullet = "\u2022 ";
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Expanded(
                 flex: 1,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children:[
                     Image(image:AssetImage('images/camera.png'),),
                     Text(
@@ -46,17 +48,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 flex: 3,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(color: colGreen),
+                    Container(
+                      color: colGreen,
+                      height: 500,
+                      width: double.infinity,
+                    ),
 
-                    ConstrainedBox(
-                    constraints: BoxConstraints.expand(),
-                    child: FlatButton(
-                      onPressed: (){},
-                      child: Image.asset("icons/uil_process.svg"))),
-
-                    Container(color: colBodyGrey,)
+                    Container(color: colBodyGrey,),
                   ],
                 )),
               Expanded(
@@ -64,13 +63,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     Text(
-                      'AAAAAAA',
+                      bullet+ 'AAAAAAA',
                       style: TextStyle(color: colBodyGrey)),
                     Text(
-                      'BBBBBBB',
+                      bullet+ 'BBBBBBB',
                       style: TextStyle(color: colBodyGrey)),
                     Text(
-                      'CCCCCCC',
+                      bullet+ 'CCCCCCC',
                       style: TextStyle(color: colBodyGrey)),
                   
                   ],
