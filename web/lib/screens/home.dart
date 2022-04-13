@@ -18,10 +18,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double width_ = MediaQuery.of(context).size.width;
+    double height_ = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Expanded(
           child: Container(
+            height: height_,
+            width: width_,
             decoration:BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("images/bg_eye.png"),
@@ -50,13 +54,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        color: colGreen,
-                        height: 500,
-                        width: double.infinity,
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          color: colGreen,
+                          height: 100,
+                          width: 100,
+                        ),
                       ),
         
-                      Container(color: colBodyGrey,),
+                      Expanded(
+                        flex: 1,
+                        child: Container(color: colBodyGrey,height: 100,
+                          width: 100,
+                        
+                        ),
+                      ),
                     ],
                   )),
                 Expanded(
